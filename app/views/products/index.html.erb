@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<div class="menu-container">
+<h1>Products</h1>
+<div class="product-container">
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Aneka Minuman</th>
+      <th>Aneka Sayuran</th>
+      <th>Aneka Ayam</th>
+      <th>Lainnya</th>
+      <th>Catering</th>
+      <th>Featured</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.aneka_minuman %></td>
+        <td><%= product.aneka_sayuran %></td>
+        <td><%= product.aneka_ayam %></td>
+        <td><%= product.lainnya %></td>
+        <td><%= product.available %></td>
+        <td><%= product.catering %></td>
+        <td><%= product.featured %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
